@@ -1,3 +1,16 @@
-#app {
+body {
+    margin: 0;
+}
 
+html, body, #root, .app, .landing-container {
+    height: 100%;
+}
+
+.header {
+    padding: 5px;
+    background-color: #EE7449;
+}
+
+.landing-container {
+    background-size: cover;
 }
