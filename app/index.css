@@ -6,7 +6,7 @@ html, body, #root, .app, .landing-container {
     height: 100%;
 }
 
-.header, .landing-container, .search {
+.header, .landing-container, .search, .weather-input-form {
     display: flex;
     align-items: center;
 }
