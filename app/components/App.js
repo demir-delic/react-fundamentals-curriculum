@@ -10,7 +10,7 @@ export default class App extends React.Component {
                 <Header />
                 <div className="landing-container" style={{ backgroundImage: "url('app/images/pattern.svg')" }}>
                     <h1>Enter a City and State</h1>
-                    <Search />
+                    <Search flexDirection="column"/>
                 </div>
             </div>
         )

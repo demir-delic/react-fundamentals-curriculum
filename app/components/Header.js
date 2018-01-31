@@ -7,7 +7,7 @@ export default class Header extends React.Component {
         return (
             <div className="header">
                 <h1>React Weather App</h1>
-                <Search />
+                <Search flexDirection="row"/>
             </div>
         )
     }

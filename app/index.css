@@ -6,11 +6,19 @@ html, body, #root, .app, .landing-container {
     height: 100%;
 }
 
+.header, .landing-container, .search {
+    display: flex;
+    align-items: center;
+}
+
 .header {
+    justify-content: space-between;
     padding: 5px;
     background-color: #EE7449;
 }
 
 .landing-container {
+    justify-content: center;
+    flex-direction: column;
     background-size: cover;
 }
