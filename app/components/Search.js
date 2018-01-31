@@ -27,9 +27,10 @@ export default class Search extends React.Component {
     getCurrentWeather(event) {
         let self = this;
         console.log("Search Input on submit: " + this.state.value);
+
         axios
             .get(
-                `http://api.openweathermap.org/data/2.5/weather/?q=${self.state.value}&type=accurate&appid=8a97501f583dce1be2d56e0078c390f0`
+                `http://api.openweathermap.org/data/2.5/weather/?q=${self.state.value}&type=accurate&appid=c0c4a4b4047b97ebc5948ac9c48c0559`
             )
             .then(function(response) {
                 console.log(response.data);
@@ -45,17 +46,32 @@ export default class Search extends React.Component {
             .catch(function(error) {
                 console.error(error);
             });
+
         event.preventDefault();
     }
     
-    getForecastedWeather(cityName) {
-        //http://api.openweathermap.org/data/2.5/forecast/daily?q={cityName}&type=accurate&APPID=8a97501f583dce1be2d56e0078c390f0&cnt=5
+    getForecastedWeather(event) {
+        let self = this;
+        console.log("Search Input on submit: " + this.state.value);
+        
+        axios
+            .get(
+                `http://api.openweathermap.org/data/2.5/forecast/daily/?q=${self.state.value}&type=accurate&appid=c0c4a4b4047b97ebc5948ac9c48c0559&cnt=5`
+            )
+            .then(function(response) {
+                console.log(response.data);
+            })
+            .catch(function(error) {
+                console.error(error);
+            });
+
+        event.preventDefault();
     }
     
     render() {
         return (
             <div className="search" >
-                <form className="weather-input-form" onSubmit={this.getCurrentWeather} style={{ flexDirection: this.props.flexDirection }}>
+                <form className="weather-input-form" onSubmit={this.getForecastedWeather} style={{ flexDirection: this.props.flexDirection }}>
                     <input type="text" placeholder="Boise, Idaho" value={this.state.value} onChange={this.updateInputState} />
                     <input type="submit" value="Get Weather" />
                 </form>
